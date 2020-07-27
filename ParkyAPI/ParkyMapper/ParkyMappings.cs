@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using ParkyAPI.Model;
+using ParkyAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

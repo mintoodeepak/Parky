@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ParkyAPI.Model;
+using ParkyAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,5 +21,6 @@ namespace ParkyAPI.Data
         //PM> add-migration AddNationalParkToDb
         //PM> update-database
         //4. Automapper  5. Automapper.Extensions.Microsoft.DependancyInjection
+        //5. Open Nuget package Manager and search "swashbuckle.aspnetcore"
     }
 }

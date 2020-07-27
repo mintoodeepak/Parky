@@ -1,10 +1,9 @@
 ﻿using ParkyAPI.Data;
-using ParkyAPI.Model;
+using ParkyAPI.Models;
 using ParkyAPI.Repository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 
 namespace ParkyAPI.Repository
@@ -61,9 +60,6 @@ namespace ParkyAPI.Repository
             return Save();
         }
 
-        NationalParkDto INationalParkRepository.GetNationalPark(int nationalParkId)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

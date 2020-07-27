@@ -36,8 +36,16 @@ namespace ParkyAPI
                 (options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))); //1. added to use appsetting.json db connection string in ApplicationDbContext class 
 
             services.AddScoped<INationalParkRepository, NationalParkRepository>();  //2. Added Interface and class to access this NationalParkRepository in any other controller
-            services.AddAutoMapper(typeof(ParkyMappings)); // 3
-
+            services.AddAutoMapper(typeof(ParkyMappings)); // 3. Mapping of DTO
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("ParkyOpenAPISpec",
+                    new Microsoft.OpenApi.Models.OpenApiInfo()
+                    {
+                        Title = "Parky API",
+                        Version = "1"
+                    });
+            }); //4. adding SwaggerUI
             services.AddControllers();
         }
 
@@ -49,7 +57,15 @@ namespace ParkyAPI
                 app.UseDeveloperExceptionPage();
             }
 
+
             app.UseHttpsRedirection();
+
+            app.UseSwagger();  // added to use Swagger
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/ParkyOpenAPISpec/swagger.json", "Parky API");
+                options.RoutePrefix = "";
+            });// added to use Swagger UI
 
             app.UseRouting();
 

@@ -1,4 +1,4 @@
-﻿using ParkyAPI.Model;
+﻿using ParkyAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ namespace ParkyAPI.Repository.IRepository
     public interface INationalParkRepository
     {
         ICollection<NationalPark> GetNationalParks();
-        NationalParkDto GetNationalPark(int nationalParkId);
+        NationalPark GetNationalPark(int nationalParkId);
         bool NationalParkExists(string name);
         bool NationalParkExists(int id);
         bool CreateNationalPark(NationalPark nationalPark);
