@@ -10,11 +10,11 @@ namespace ParkyAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class NationlParksController : Controller
+    public class NationalParksController : Controller
     {
         private INationalParkRepository _npRepo;
         private readonly IMapper _mapper;
-        public NationlParksController(INationalParkRepository nprepo, IMapper mapper)
+        public NationalParksController(INationalParkRepository nprepo, IMapper mapper)
         {
             _npRepo = nprepo;
             _mapper = mapper;
@@ -24,5 +24,6 @@ namespace ParkyAPI.Controllers
             var objList = _npRepo.GetNationalParks();
             return Ok(objList);
         }
+
     }
 }
